@@ -27,7 +27,7 @@ const HOP_VERSION = "4.3";
 // selectors
 const HOP_ALL = 256;
 // starting debug mode
-const HOP_DEBUGMODE = false;
+const HOP_DEBUGMODE = true;
 // default light direction
 const HOP_DEFAULTLIGHT = [0, 0, -1];
 // default points size
@@ -2907,6 +2907,11 @@ Presenter.prototype = {
 
     saveScreenshot: function () {
         this.isCapturingScreenshot = true;
+        this.repaint();
+    },
+
+    toggleDebug: function () {
+        Nexus.Debug.nodes = !Nexus.Debug.nodes;
         this.repaint();
     },
 

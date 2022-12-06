@@ -60,8 +60,11 @@
                 <img id="orthographic" title="Orthographic Camera" src="skins/dark/orthographic.png" /><br />
                 <!--CAMERA-->
                 <!--SCREENSHOT-->
-                <!-- <img id="screenshot" title="Save Screenshot" src="skins/dark/screenshot.png" /><br /> -->
+                <img id="screenshot" title="Save Screenshot" src="skins/dark/screenshot.png" /><br />
                 <!--SCREENSHOT-->
+                <!--toggleDebug-->
+                <img id="toggleDebug" title="Toggle Debug" src="skins/dark/menu.png" /><br />
+                <!--toggleDebug-->
                 <!--FULLSCREEN-->
                 <img id="full_on" title="Exit Full Screen" src="skins/dark/full_on.png" style="position: absolute; visibility: hidden" />
                 <img id="full" title="Full Screen" src="skins/dark/full.png" />
@@ -162,7 +165,7 @@
 
             presenter.setScene({
                 meshes: {
-                    mesh_1: { url: getURLParameter("model") || "models/gargo.nxz" },
+                    mesh_1: { url: getURLParameter("model") || "models/monteclaro.nxz" },
                 },
                 modelInstances: {
                     model_1: {
@@ -173,12 +176,12 @@
                 trackball: {
                     type: TurntablePanTrackball,
                     trackOptions: {
-                        startPhi: 0.0,
+                        startPhi: 10.0,
                         startTheta: 30.0,
                         startDistance: 2.5,
                         minMaxPhi: [-180, 180],
                         minMaxTheta: [-90.0, 90.0],
-                        minMaxDist: [0.01, 5],
+                        minMaxDist: [0.001, 3],
                     },
                 },
             });
@@ -243,6 +246,9 @@
             //--POINT PICKING--
             //--SCREENSHOT--
             else if (action == "screenshot") presenter.saveScreenshot();
+            //--SCREENSHOT--
+            //--SCREENSHOT--
+            else if (action == "toggleDebug") presenter.toggleDebug();
             //--SCREENSHOT--
             //--SECTIONS--
             else if (action == "sections" || action == "sections_on") {
