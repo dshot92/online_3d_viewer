@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
     <head>
         <meta content="charset=UTF-8" />
-        <title>3DHOP - 3D Heritage Online Presenter</title>
+        <title>3D Viewer</title>
         <!--STYLESHEET-->
         <link type="text/css" rel="stylesheet" href="stylesheet/3dhop.css" />
         <!--SPIDERGL-->
@@ -44,23 +44,23 @@
                 <img id="measure" title="Enable Measure Tool" src="skins/dark/measure.png" /><br />
                 <!--MEASURE-->
                 <!--POINT PICKING-->
-                <img id="pick_on" title="Disable PickPoint Mode" src="skins/dark/pick_on.png" style="position: absolute; visibility: hidden" />
-                <img id="pick" title="Enable PickPoint Mode" src="skins/dark/pick.png" /><br />
+                <!-- <img id="pick_on" title="Disable PickPoint Mode" src="skins/dark/pick_on.png" style="position: absolute; visibility: hidden" />
+                <img id="pick" title="Enable PickPoint Mode" src="skins/dark/pick.png" /><br /> -->
                 <!--POINT PICKING-->
                 <!--SECTIONS-->
-                <img id="sections_on" title="Disable Plane Sections" src="skins/dark/sections_on.png" style="position: absolute; visibility: hidden" />
-                <img id="sections" title="Enable Plane Sections" src="skins/dark/sections.png" /><br />
+                <!-- <img id="sections_on" title="Disable Plane Sections" src="skins/dark/sections_on.png" style="position: absolute; visibility: hidden" />
+                <img id="sections" title="Enable Plane Sections" src="skins/dark/sections.png" /><br /> -->
                 <!--SECTIONS-->
                 <!--COLOR-->
-                <img id="color_on" title="Disable Solid Color" src="skins/dark/color_on.png" style="position: absolute; visibility: hidden" />
-                <img id="color" title="Enable Solid Color" src="skins/dark/color.png" /><br />
+                <!-- <img id="color_on" title="Disable Solid Color" src="skins/dark/color_on.png" style="position: absolute; visibility: hidden" />
+                <img id="color" title="Enable Solid Color" src="skins/dark/color.png" /><br /> -->
                 <!--COLOR-->
                 <!--CAMERA-->
                 <img id="perspective" title="Perspective Camera" src="skins/dark/perspective.png" style="position: absolute; visibility: hidden" />
                 <img id="orthographic" title="Orthographic Camera" src="skins/dark/orthographic.png" /><br />
                 <!--CAMERA-->
                 <!--SCREENSHOT-->
-                <img id="screenshot" title="Save Screenshot" src="skins/dark/screenshot.png" /><br />
+                <!-- <img id="screenshot" title="Save Screenshot" src="skins/dark/screenshot.png" /><br /> -->
                 <!--SCREENSHOT-->
                 <!--FULLSCREEN-->
                 <img id="full_on" title="Exit Full Screen" src="skins/dark/full_on.png" style="position: absolute; visibility: hidden" />
@@ -173,12 +173,12 @@
                 trackball: {
                     type: TurntablePanTrackball,
                     trackOptions: {
-                        startPhi: 35.0,
-                        startTheta: 15.0,
+                        startPhi: 0.0,
+                        startTheta: 30.0,
                         startDistance: 2.5,
                         minMaxPhi: [-180, 180],
                         minMaxTheta: [-90.0, 90.0],
-                        minMaxDist: [0.1, 3],
+                        minMaxDist: [0.01, 5],
                     },
                 },
             });
@@ -256,7 +256,7 @@
         function onEndMeasure(measure) {
             // measure.toFixed(2) sets the number of decimals when displaying the measure
             // depending on the model measure units, use "mm","m","km" or whatever you have
-            $("#measure-output").html(measure.toFixed(2) + "mm");
+            $("#measure-output").html(measure.toFixed(2) + "m");
         }
         //--MEASURE--
 
