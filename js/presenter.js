@@ -2554,7 +2554,7 @@ Presenter.prototype = {
         // nexus parameters
         this.setNexusTargetError(1.0);
         this.setNexusMinFps(15.0);
-        this.setNexusMaxCacheSize(512 * (1 << 20)); //512MB
+        this.setNexusMaxCacheSize(8192 * (1 << 20)); //512MB
 
         // debug mode
         this._isDebugging = HOP_DEBUGMODE;
