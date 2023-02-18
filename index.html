@@ -15,10 +15,11 @@
         <script type="text/javascript" src="js/nexus.js"></script>
         <script type="text/javascript" src="js/ply.js"></script>
         <!--TRACKBALLS-->
-        <script type="text/javascript" src="js/trackball_turntable.js"></script>
-        <script type="text/javascript" src="js/trackball_turntable_pan.js"></script>
         <script type="text/javascript" src="js/trackball_pantilt.js"></script>
+        <script type="text/javascript" src="js/trackball_rail.js"></script>
         <script type="text/javascript" src="js/trackball_sphere.js"></script>
+        <script type="text/javascript" src="js/trackball_turntable_pan.js"></script>
+        <script type="text/javascript" src="js/trackball_turntable.js"></script>
         <!--UTILITY-->
         <script type="text/javascript" src="js/init.js"></script>
     </head>
@@ -157,20 +158,18 @@
             return decodeURIComponent((new RegExp("[?|&]" + name + "=" + "([^&;]+?)(&|#|;|$)").exec(location.search) || [null, ""])[1].replace(/\+/g, "%20")) || null;
         }
 
-        // ?model=models/obj_16_16.nxz
-
         var presenter = null;
         function setup3dhop() {
             presenter = new Presenter("draw-canvas");
 
             presenter.setScene({
                 meshes: {
-                    mesh_1: { url: getURLParameter("model") || "models/Monteclaro_Medium_Default.nxz" },
+                    mesh_1: { url: getURLParameter("model") || "models/Monteclaro_Park.nxz" },
                 },
                 modelInstances: {
                     model_1: {
                         mesh: "mesh_1",
-                        color: [0.8, 0.7, 0.75],
+                        color: [1.0, 1.0, 1.0],
                     },
                 },
                 trackball: {
